@@ -1,3 +1,25 @@
+window.onload = function (event) {
+    console.log(`an event happened, of type ${event.type}`)
+}
+window.addEventListener('load', event => {
+    console.log( `${event.type} happened`);
+})
+
+const theButton = document.querySelector('#theButton');
+
+theButton.onclick = function (event){
+    console.log( `${event.type} happened`);
+}
+theButton.addEventListener('click', event => {
+    console.log(`you ${event.type}ed on the ${event.target.nodeType}`);
+})
+theButton.addEventListener('click', event => {
+    console.log(`about ton change the DOM`);
+    event.target.style.backgroundColor = 'red';
+    document.body.style.backgroundColor = 'blue';
+})
+
+
 /* Use this sample as a quide */
 let sampleButton = document.querySelector('.sampleButton');
 sampleButton.addEventListener('click', (event) => {
